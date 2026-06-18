@@ -1,0 +1,5 @@
+database/dns_logs.db
+__pycache__/
+*.pyc
+.tranco/
+*.db
